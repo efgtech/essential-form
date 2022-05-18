@@ -1,36 +1,36 @@
-import React, { useEffect, useState } from "react"
-import "../css/index.css"
-import "bootstrap/dist/css/bootstrap.min.css"
-import Header from "../components/Header"
-import QuoteForm from "../components/QuoteForm.js"
-import Footer from "../components/Footer"
-import Focus from "../components/Focus"
-import { Helmet } from "react-helmet"
-import { PhoneConversion } from "../data/PhoneConversion"
-import { PP_TYPE } from "../types/types"
-import { isBrowser } from "../data/utils"
+import React, { useEffect, useState } from "react";
+import "../css/index.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Header from "../components/Header";
+import QuoteForm from "../components/QuoteForm.js";
+import Footer from "../components/Footer";
+import Focus from "../components/Focus";
+import { Helmet } from "react-helmet";
+import { PhoneConversion } from "../data/PhoneConversion";
+import { PP_TYPE } from "../types/types";
+import { isBrowser } from "../data/utils";
 
-const App = props => {
-  const [phoneNumber, setPhoneNumber] = useState("0161 694 8990")
-  const [formType, setFormType] = useState(PP_TYPE)
+const App = (props) => {
+  const [phoneNumber, setPhoneNumber] = useState("0161 694 8990");
+  const [formType, setFormType] = useState(PP_TYPE);
 
   useEffect(() => {
     if (props.hasOwnProperty("type")) {
-      setFormType(props.type)
+      setFormType(props.type);
     }
-  }, [props])
+  }, [props]);
 
   useEffect(() => {
     if (isBrowser()) {
-      window.dataLayer = window.dataLayer || []
+      window.dataLayer = window.dataLayer || [];
       function gtag() {
-        window.dataLayer.push(arguments)
+        window.dataLayer.push(arguments);
       }
-      gtag("js", new Date())
+      gtag("js", new Date());
 
-      gtag("config", `${process.env.GATSBY_GOOGLE_ANALYTICS_ID}`)
+      gtag("config", `${process.env.GATSBY_GOOGLE_ANALYTICS_ID}`);
     }
-  })
+  });
 
   // Helmet used to dynamically manage the head section
   return (
@@ -66,17 +66,17 @@ const App = props => {
               h.hj =
                 h.hj ||
                 function () {
-                  ;(h.hj.q = h.hj.q || []).push(arguments)
-                }
+                  (h.hj.q = h.hj.q || []).push(arguments);
+                };
               h._hjSettings = {
                 hjid: process.env.GATSBY_HOTJAR_ID,
                 hjsv: process.env.GATSBY_HOTJAR_SNIPPET_VERSION,
-              }
-              a = o.getElementsByTagName("head")[0]
-              r = o.createElement("script")
-              r.async = 1
-              r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv
-              a.appendChild(r)
+              };
+              a = o.getElementsByTagName("head")[0];
+              r = o.createElement("script");
+              r.async = 1;
+              r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+              a.appendChild(r);
             })(
               window,
               document,
@@ -88,7 +88,8 @@ const App = props => {
         <title>{props.handlePageTitle.title}</title>
       </Helmet>
       <>
-        <Focus />
+        {/* Disable Focus for timing being --- Lewis Howe*/}
+        {/* <Focus /> */}
         <PhoneConversion
           phoneNumber={phoneNumber}
           setPhoneNumber={setPhoneNumber}
@@ -98,8 +99,8 @@ const App = props => {
         <Footer />
       </>
     </main>
-  )
-}
+  );
+};
 
 // default values if props are not passed in
 App.defaultProps = {
@@ -107,5 +108,5 @@ App.defaultProps = {
     title: "Uk Life Insurance",
     header: <>Compare Cheap Life Insurance</>,
   },
-}
-export default App
+};
+export default App;
