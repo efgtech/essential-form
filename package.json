@@ -1,7 +1,7 @@
 {
-  "name": "ukl",
+  "name": "essential",
   "private": true,
-  "description": "ukl form",
+  "description": "essential form",
   "version": "0.1.0",
   "license": "0BSD",
   "scripts": {
