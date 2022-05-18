@@ -4,14 +4,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "../components/Header";
 import QuoteForm from "../components/QuoteForm.js";
 import Footer from "../components/Footer";
-import Focus from "../components/Focus";
 import { Helmet } from "react-helmet";
-import { PhoneConversion } from "../data/PhoneConversion";
 import { PP_TYPE } from "../types/types";
 import { isBrowser } from "../data/utils";
 
 const App = (props) => {
-  const [phoneNumber, setPhoneNumber] = useState("0161 694 8990");
   const [formType, setFormType] = useState(PP_TYPE);
 
   useEffect(() => {
@@ -46,20 +43,6 @@ const App = (props) => {
           src="https://widget.reviews.co.uk/rich-snippet-reviews-widgets/dist.js"
           type="text/javascript"
         ></script>
-        <script
-          async={true}
-          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GATSBY_GOOGLE_CONVERSION_ID}`}
-        ></script>
-        <script
-          aysnc={true}
-          type="text/javascript"
-          src="https://www.googleadservices.com/pagead/conversion.js"
-        ></script>
-        <script
-          async={true}
-          type="text/javascript"
-          src={`https://www.googletagmanager.com/gtm.js?id=${process.env.GATSBY_GOOGLE_TAG_ID}`}
-        ></script>
         {isBrowser() && (
           <script>
             {(function (h, o, t, j, a, r) {
@@ -88,13 +71,7 @@ const App = (props) => {
         <title>{props.handlePageTitle.title}</title>
       </Helmet>
       <>
-        {/* Disable Focus for timing being --- Lewis Howe*/}
-        {/* <Focus /> */}
-        <PhoneConversion
-          phoneNumber={phoneNumber}
-          setPhoneNumber={setPhoneNumber}
-        />
-        <Header phoneNumber={phoneNumber} />
+        <Header />
         <QuoteForm formType={formType} header={props.handlePageTitle.header} />
         <Footer />
       </>
@@ -105,7 +82,7 @@ const App = (props) => {
 // default values if props are not passed in
 App.defaultProps = {
   handlePageTitle: {
-    title: "Uk Life Insurance",
+    title: "Compare Cheap Life Insurance",
     header: <>Compare Cheap Life Insurance</>,
   },
 };
