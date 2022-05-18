@@ -1,21 +1,21 @@
-import axios from "axios"
-import { useEffect, useState } from "react"
+import axios from "axios";
+import { useEffect, useState } from "react";
 import {
   validateData,
   validatePhoneNumber,
   handleError,
   setCompanyNameIsRequiredToFalse,
-} from "./validation.js"
-import { insuranceType } from "../data/formOptions"
-import Cookies from "universal-cookie"
-import { navigate } from "gatsby"
-import { isBrowser } from "../data/utils.js"
-import { BP_TYPE, PP_TYPE } from "../types/types"
+} from "./validation.js";
+import { insuranceType } from "../data/formOptions";
+import Cookies from "universal-cookie";
+import { navigate } from "gatsby";
+import { isBrowser } from "../data/utils.js";
+import { BP_TYPE, PP_TYPE } from "../types/types";
 
-const UKL_LAST_SUBMISSION_COOKIE_NAME = "ukl_last_submission"
+const UKL_LAST_SUBMISSION_COOKIE_NAME = "ukl_last_submission";
 
-const useForm = formType => {
-  const cookies = new Cookies()
+const useForm = (formType) => {
+  const cookies = new Cookies();
 
   // set fields && state where values will be stored
   const [values, setValues] = useState({
@@ -35,107 +35,107 @@ const useForm = formType => {
     amountOfCover: "150000",
     lengthOfCover: 20,
     companyName: "",
-  })
-  const [disabled, setDisabled] = useState(false)
+  });
+  const [disabled, setDisabled] = useState(false);
 
   useEffect(() => {
     switch (formType) {
       case PP_TYPE:
-        return setValues({ ...values, type: insuranceType.level })
+        return setValues({ ...values, type: insuranceType.level });
       case BP_TYPE:
-        return setValues({ ...values, type: insuranceType.keyman })
+        return setValues({ ...values, type: insuranceType.keyman });
       default:
-        return setValues({ ...values, type: insuranceType.level })
+        return setValues({ ...values, type: insuranceType.level });
     }
-  }, [formType])
+  }, [formType]);
 
-  const setType = typeArg => {
-    setValues({ ...values, type: typeArg })
-  }
+  const setType = (typeArg) => {
+    setValues({ ...values, type: typeArg });
+  };
 
-  const setCic = cicArg => {
-    setValues({ ...values, cic: cicArg })
-  }
+  const setCic = (cicArg) => {
+    setValues({ ...values, cic: cicArg });
+  };
 
-  const setGrouping = groupingArg => {
-    setValues({ ...values, grouping: groupingArg })
-  }
+  const setGrouping = (groupingArg) => {
+    setValues({ ...values, grouping: groupingArg });
+  };
 
-  const setSmoker = smokerArg => {
-    setValues({ ...values, smoker: smokerArg })
-  }
+  const setSmoker = (smokerArg) => {
+    setValues({ ...values, smoker: smokerArg });
+  };
 
   // // hides critical illness cover and length of cover if type of insurance == whole of life
   const showHideCicAndLoc = () => {
-    return values.type === insuranceType.wol ? "none" : "block"
-  }
+    return values.type === insuranceType.wol ? "none" : "block";
+  };
 
   const setCompanyNameCriteria = () => {
     if (formType === PP_TYPE) {
-      setCompanyNameIsRequiredToFalse()
+      setCompanyNameIsRequiredToFalse();
     }
-  }
+  };
 
   //display error to user
-  const [errorMessage, setErrorMessage] = useState("")
+  const [errorMessage, setErrorMessage] = useState("");
 
   const formatTitle = () => {
-    return values.title.toUpperCase()
-  }
+    return values.title.toUpperCase();
+  };
 
   const formatDate = () => {
-    const currentDate = new Date()
-    const formattedDate = currentDate.toISOString()
+    const currentDate = new Date();
+    const formattedDate = currentDate.toISOString();
 
-    return formattedDate
-  }
+    return formattedDate;
+  };
 
   const formatDateOfBirth = () => {
     const dateOfBirth = new Date(
       `${values.dobYear}-${values.dobMonth}-${values.dobDay}T00:00:00`
-    )
+    );
 
-    return dateOfBirth
-  }
+    return dateOfBirth;
+  };
 
   const hasExistingSubmission = () => {
-    return cookies.get(UKL_LAST_SUBMISSION_COOKIE_NAME) ? true : false
-  }
+    return cookies.get(UKL_LAST_SUBMISSION_COOKIE_NAME) ? true : false;
+  };
 
-  const getUrlParam = param => {
+  const getUrlParam = (param) => {
     if (isBrowser()) {
-      const params = new URLSearchParams(window.location.search)
-      return params.get(param)
+      const params = new URLSearchParams(window.location.search);
+      return params.get(param);
     }
-  }
+  };
 
   const getSource = () => {
-    const sourceParam = getUrlParam("source")
+    const sourceParam = getUrlParam("source");
     switch (sourceParam) {
       case "google":
-        return { enum_string: "GOOGLE", click_id_key: "gclid" }
+        return { enum_string: "GOOGLE", click_id_key: "gclid" };
       case "bing":
-        return { enum_string: "BING", click_id_key: "msclkid" }
+        return { enum_string: "BING", click_id_key: "msclkid" };
       default:
-        return { enum_string: "UNKNOWN", click_id_key: "undefined" }
+        return { enum_string: "UNKNOWN", click_id_key: "undefined" };
     }
-  }
+  };
 
   const setApiKey = () => {
     if (formType === PP_TYPE) {
-      return process.env.GATSBY_PP_API_KEY
+      return process.env.GATSBY_PP_API_KEY;
     } else if (formType === BP_TYPE) {
-      return process.env.GATSBY_BP_API_KEY
+      return process.env.GATSBY_BP_API_KEY;
     }
-  }
+  };
 
   const setSourceCode = () => {
     if (formType === PP_TYPE) {
-      return 2030
+      return 2027;
     } else if (formType === BP_TYPE) {
-      return 2175
+      return 2209;
     }
-  }
+  };
 
   const userData = {
     api_key: setApiKey(),
@@ -178,64 +178,64 @@ const useForm = formType => {
       pg: getUrlParam("pg"),
       camp: getUrlParam("camp"),
     },
-  }
+  };
 
-  const jsonUserData = JSON.stringify(userData, undefined, 4)
+  const jsonUserData = JSON.stringify(userData, undefined, 4);
 
-  const handleChange = event => {
-    const { name, value } = event.target
+  const handleChange = (event) => {
+    const { name, value } = event.target;
 
     //update values
     setValues({
       ...values,
       [name]: value,
-    })
-  }
+    });
+  };
 
-  const handleTermChange = event => {
-    const { value } = event.target
+  const handleTermChange = (event) => {
+    const { value } = event.target;
     //update values
     setValues({
       ...values,
       lengthOfCover: parseInt(value),
-    })
-  }
+    });
+  };
 
-  const handleBlur = event => {
-    setCompanyNameCriteria()
-    let name = event.target.name
+  const handleBlur = (event) => {
+    setCompanyNameCriteria();
+    let name = event.target.name;
     validateData({
       [`${name}`]: values[name],
-    })
-  }
+    });
+  };
 
-  const handleSubmit = event => {
-    event.preventDefault()
-    setDisabled(true)
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setDisabled(true);
 
     if (hasExistingSubmission()) {
-      setErrorMessage("We have already recieved your enquiry.")
-      window.location.hash = "alert"
-      return false
+      setErrorMessage("We have already recieved your enquiry.");
+      window.location.hash = "alert";
+      return false;
     }
 
-    setCompanyNameCriteria()
+    setCompanyNameCriteria();
     // Check if the form is valid
-    let formValid = validateData(values)
+    let formValid = validateData(values);
     if (!formValid) {
-      return false
+      return false;
     }
 
     validatePhoneNumber(values.phone)
-      .then(res => {
+      .then((res) => {
         if (res === false) {
           handleError(
             "Invalid phone number",
             document.getElementById("phone"),
             "phone"
-          )
-          setDisabled(false)
-          return false
+          );
+          setDisabled(false);
+          return false;
         }
         axios
           .post("https://leads.efgtech.co.uk", jsonUserData, {
@@ -248,20 +248,20 @@ const useForm = formType => {
             cookies.set(UKL_LAST_SUBMISSION_COOKIE_NAME, true, {
               path: "/",
               maxAge: 86400,
-            })
-            navigate("/results/", { state: { formType } })
+            });
+            navigate("/results/", { state: { formType } });
           })
           .catch(() => {
-            setDisabled(false)
-            setErrorMessage("Unable to submit.")
-            return false
-          })
+            setDisabled(false);
+            setErrorMessage("Unable to submit.");
+            return false;
+          });
       })
       .catch(() => {
         //even if it fails, we still want to accept as not the customer's fault.
       })
-      .catch(() => {})
-  }
+      .catch(() => {});
+  };
 
   return {
     values,
@@ -278,7 +278,7 @@ const useForm = formType => {
     setSmoker,
     showHideCicAndLoc,
     disabled,
-  }
-}
+  };
+};
 
-export default useForm
+export default useForm;
