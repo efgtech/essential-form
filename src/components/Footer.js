@@ -1,5 +1,6 @@
-import React from "react"
-import { Container, Row, Col } from "react-bootstrap"
+import React from "react";
+import { Container, Row, Col } from "react-bootstrap";
+import essentialLogo from "../images/essential-logo.png";
 
 const Footer = () => {
   return (
@@ -36,24 +37,16 @@ const Footer = () => {
         <Container>
           <Row>
             <Col>
-              <p className="ukl-brand">
-                uk<span style={{ color: "#fe9900" }}>life</span>insurance.co.uk
-              </p>
+              <img
+                src={essentialLogo}
+                alt="Essential Insurance logo"
+                className="img-fluid"
+              ></img>
             </Col>
           </Row>
           <Row>
             <Col>
               <ul>
-                <li>
-                  <a
-                    href="https://uklifeinsurance.co.uk/tandc.php"
-                    rel="noreferrer nofollow"
-                    target="_blank"
-                    className="terms"
-                  >
-                    T & C's
-                  </a>
-                </li>
                 <li>
                   <a
                     href="https://uklifeinsurance.co.uk/privacy.php"
@@ -162,7 +155,7 @@ const Footer = () => {
         </Container>
       </footer>
     </div>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
