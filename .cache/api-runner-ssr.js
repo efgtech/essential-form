@@ -1,18 +1,12 @@
 var plugins = [{
-      plugin: require('/home/kirsty/Documents/essential-form/node_modules/gatsby-plugin-google-gtag/gatsby-ssr'),
-      options: {"plugins":[],"includeInDevelopment":true,"trackingIds":[null],"gtagConfig":{"optimize_id":"OPT_CONTAINER_ID","anonymize_ip":true,"cookie_expires":0},"pluginConfig":{"head":true}},
-    },{
       plugin: require('/home/kirsty/Documents/essential-form/node_modules/gatsby-plugin-fontawesome-css/gatsby-ssr'),
       options: {"plugins":[]},
     },{
       plugin: require('/home/kirsty/Documents/essential-form/node_modules/gatsby-plugin-react-helmet/gatsby-ssr'),
       options: {"plugins":[]},
     },{
-      plugin: require('/home/kirsty/Documents/essential-form/node_modules/gatsby-plugin-facebook-pixel/gatsby-ssr'),
-      options: {"plugins":[]},
-    },{
       plugin: require('/home/kirsty/Documents/essential-form/node_modules/gatsby-plugin-hotjar/gatsby-ssr'),
-      options: {"plugins":[],"includeInDevelopment":false},
+      options: {"plugins":[],"includeInDevelopment":false,"id":"2972185"},
     }]
 // During bootstrap, we write requires at top of this file which looks like:
 // var plugins = [
