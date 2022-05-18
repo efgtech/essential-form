@@ -1,20 +1,20 @@
-import React, { useEffect } from "react"
-import { Container, Row, Col, Card } from "react-bootstrap"
-import "../css/index.css"
-import ess from "../images/ess.png"
-import { isBrowser } from "../data/utils"
-import { BP_TYPE } from "../types/types"
+import React, { useEffect } from "react";
+import { Container, Row, Col, Card } from "react-bootstrap";
+import "../css/index.css";
+import ess from "../images/ess.png";
+import { isBrowser } from "../data/utils";
+import { BP_TYPE } from "../types/types";
 
-const Results = props => {
+const Results = (props) => {
   // https://reach.tech/router/api/navigate
   // the state object is passed through navigate on useForm to have access to the formType prop.
   // isBP checks if null if user didn't navigate on submit
   // if navigated on submit, it will return formType and render text
   const isBp = () => {
     if (props.location.state) {
-      return props.location.state.formType === BP_TYPE
+      return props.location.state.formType === BP_TYPE;
     }
-  }
+  };
 
   useEffect(() => {
     if (isBrowser) {
@@ -30,11 +30,11 @@ const Results = props => {
             numReviews: 40,
             contentMode: "company",
             hideDates: false,
-          })
+          });
         }
       }
     }
-  })
+  });
 
   useEffect(() => {
     if (isBrowser) {
@@ -44,27 +44,15 @@ const Results = props => {
             send_to: `${process.env.GATSBY_GOOGLE_CONVERSION_ID}/RAAFCMHyPRDDvIb9Aw`,
             value: "1.00",
             currency: "GBP",
-          })
+          });
         }
       }
     }
-  })
+  });
 
   return (
     <>
       <div className="bg-img">
-        <header className="header">
-          <Container>
-            <Row className="header-row">
-              <Col>
-                <p className="results-header">
-                  uk<span style={{ color: "#fe9900" }}>life</span>
-                  insurance.co.uk
-                </p>
-              </Col>
-            </Row>
-          </Container>
-        </header>
         <Container>
           <Row>
             <Col sm={12} xs={12}>
@@ -132,7 +120,7 @@ const Results = props => {
         </Container>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Results
+export default Results;
