@@ -5,9 +5,7 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import "@fortawesome/fontawesome-pro/css/all.min.css";
 import essentialLogo from "../images/essential-logo.png";
 
-const Header = (props) => {
-  const { phoneNumber } = props;
-
+const Header = () => {
   return (
     <header className="header">
       <Container>
@@ -21,7 +19,7 @@ const Header = (props) => {
           </Col>
           <Col className="desktop-only-header col-sm-4 d-none d-md-block">
             <p className="uk-info">
-              Get a quote over the phone: <strong>{phoneNumber}</strong>
+              Get a quote over the phone: <strong>0161 694 8990</strong>
               <br />
               Mon - Thurs: <strong>9:00am - 7:00pm</strong>
               <br />
@@ -30,7 +28,7 @@ const Header = (props) => {
           </Col>
 
           <Col className="d-sm-none telephone-icon">
-            <a href={"tel:" + phoneNumber}>
+            <a href={"tel: 0161 694 8990"}>
               <i
                 className="fas fa-phone-square fa-3x"
                 style={{
