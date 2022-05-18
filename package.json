@@ -1,0 +1,59 @@
+{
+  "name": "ukl",
+  "private": true,
+  "description": "ukl form",
+  "version": "0.1.0",
+  "license": "0BSD",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-pro": "^6.1.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.32",
+    "@fortawesome/free-brands-svg-icons": "^5.15.1",
+    "@fortawesome/free-regular-svg-icons": "^5.15.1",
+    "@fortawesome/free-solid-svg-icons": "^5.15.1",
+    "@fortawesome/react-fontawesome": "^0.1.14",
+    "animate.css": "^4.1.1",
+    "axios": "^0.21.1",
+    "bootstrap": "^4.5.3",
+    "dompurify": "^2.2.6",
+    "font-awesome": "^4.7.0",
+    "ga-gtag": "^1.1.1",
+    "gatsby": "^2.32.13",
+    "gatsby-plugin-env-variables": "^2.2.0",
+    "gatsby-plugin-facebook-pixel": "^1.0.5",
+    "gatsby-plugin-fontawesome-css": "^1.0.0",
+    "gatsby-plugin-google-analytics": "^2.11.0",
+    "gatsby-plugin-google-gtag": "^2.8.0",
+    "gatsby-plugin-hotjar": "^1.1.1",
+    "gatsby-plugin-next-seo": "^1.7.0",
+    "gatsby-plugin-react-helmet": "^3.10.0",
+    "react": "^16.12.0",
+    "react-bootstrap": "^1.4.0",
+    "react-cookie": "^4.0.3",
+    "react-dom": "^16.12.0",
+    "react-helmet": "^6.1.0",
+    "react-helmet-async": "^1.0.7",
+    "universal-cookie": "^4.0.4"
+  },
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.1",
+    "prettier": "2.2.1"
+  },
+  "main": "gatsby-config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/KirstLMCG/essential-form.git"
+  },
+  "author": "Kirsty McGlynn",
+  "bugs": {
+    "url": "https://github.com/KirstLMCG/essential-form/issues"
+  },
+  "homepage": "https://github.com/KirstLMCG/essential-form#readme"
+}
