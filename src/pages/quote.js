@@ -1,7 +1,7 @@
-import React from "react"
-import App from "./index"
-import { PP_TYPE } from "../types/types"
-import { getPGFromURL, DEFAULT_PG_VALUE } from "../pg/pg"
+import React from "react";
+import App from "./index";
+import { PP_TYPE } from "../types/types";
+import { getPGFromURL, DEFAULT_PG_VALUE } from "../pg/pg";
 
 const paramObj = {
   1: {
@@ -577,19 +577,19 @@ const paramObj = {
     ),
   },
   [DEFAULT_PG_VALUE]: {
-    title: "Cheap Life Insurance",
+    title: "Compare Cheap Life Insurance",
     header: <>Compare Cheap Life Insurance</>,
   },
-}
+};
 
 const handlePageTitle = () => {
   return paramObj[getPGFromURL()] === undefined
     ? paramObj[DEFAULT_PG_VALUE]
-    : paramObj[getPGFromURL()]
-}
+    : paramObj[getPGFromURL()];
+};
 
 const Quote = () => {
-  return <App handlePageTitle={handlePageTitle()} type={PP_TYPE}></App>
-}
+  return <App handlePageTitle={handlePageTitle()} type={PP_TYPE}></App>;
+};
 
-export default Quote
+export default Quote;
