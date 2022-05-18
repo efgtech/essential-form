@@ -1,20 +1,23 @@
-import React from "react"
-import { Container, Row, Col } from "react-bootstrap"
+import React from "react";
+import { Container, Row, Col } from "react-bootstrap";
 //button icons
-import "@fortawesome/fontawesome-free/css/all.min.css"
-import "@fortawesome/fontawesome-pro/css/all.min.css"
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import "@fortawesome/fontawesome-pro/css/all.min.css";
+import essentialLogo from "../images/essential-logo.png";
 
-const Header = props => {
-  const { phoneNumber } = props
+const Header = (props) => {
+  const { phoneNumber } = props;
 
   return (
     <header className="header">
       <Container>
         <Row className="header-row">
-          <Col>
-            <p className="ukl-brand">
-              uk<span style={{ color: "#fe9900" }}>life</span>insurance.co.uk
-            </p>
+          <Col xs={9} md={6}>
+            <img
+              src={essentialLogo}
+              alt="Essential Insurance logo"
+              className="essential-logo img-fluid"
+            ></img>
           </Col>
           <Col className="desktop-only-header col-sm-4 d-none d-md-block">
             <p className="uk-info">
@@ -31,7 +34,7 @@ const Header = props => {
               <i
                 className="fas fa-phone-square fa-3x"
                 style={{
-                  color: "#FE9900",
+                  color: "#8dc63f",
                   marginTop: "10px",
                   textDecoration: "none",
                 }}
@@ -41,7 +44,7 @@ const Header = props => {
         </Row>
       </Container>
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
