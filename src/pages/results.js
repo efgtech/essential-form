@@ -36,20 +36,6 @@ const Results = (props) => {
     }
   });
 
-  useEffect(() => {
-    if (isBrowser) {
-      if (window) {
-        if (window.hasOwnProperty("gtag")) {
-          window.gtag("event", "conversion", {
-            send_to: `${process.env.GATSBY_GOOGLE_CONVERSION_ID}/RAAFCMHyPRDDvIb9Aw`,
-            value: "1.00",
-            currency: "GBP",
-          });
-        }
-      }
-    }
-  });
-
   return (
     <>
       <div className="bg-img">
