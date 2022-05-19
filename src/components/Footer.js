@@ -65,13 +65,12 @@ const Footer = () => {
                     <br />
                     <strong>
                       {" "}
-                      © {new Date().getFullYear()} Uklifeinsurance.co.uk is a
-                      trading style of Essential Finance Group Management Ltd
-                      authorised and regulated by the Financial Conduct
-                      Authority No. 782710.
-                      <br />
-                      Essential Finance Group Management Ltd is registered in
-                      England and Wales, No. 10476765.
+                      Essential Insurance Services is a trading style of
+                      Essential Finance Group (UK) Limited an appointed
+                      representative of Essential Finance Group Management
+                      Limited authorised and regulated by the Financial Conduct
+                      Authority No. 782710. Essential Finance Group (UK) Limited
+                      is registered in England and Wales, No. 9357808.
                     </strong>
                   </p>
                 </li>

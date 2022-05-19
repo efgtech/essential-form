@@ -55,6 +55,9 @@ typings/
 .env*
 .env.development
 
+.cache
+.cache/redux
+
 # gatsby files
 .cache/
 public
