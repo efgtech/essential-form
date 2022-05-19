@@ -460,7 +460,8 @@ label {
 /* ------------FOOTER------------ */
 
 .terms {
-  color: #737373 !important;
+  text-decoration: none !important;
+  color: #060 !important;
 }
 
 ul {
@@ -476,8 +477,8 @@ footer li {
 }
 
 a {
-  text-decoration: none;
-  color: black !important;
+  text-decoration: none !important;
+  color: #060 !important;
 }
 
 .trading-info {
