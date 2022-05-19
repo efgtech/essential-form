@@ -1,9 +1,10 @@
-import React from "react"
-import { Row, Col, Form, Button } from "react-bootstrap"
-import { insuranceType, partyGrouping } from "../data/formOptions"
+import React from "react";
+import { Row, Col, Form, Button } from "react-bootstrap";
+import { insuranceType, partyGrouping } from "../data/formOptions";
 
-const Quote = props => {
-  const { values, setType, setCic, setGrouping, setSmoker } = props
+const Quote = (props) => {
+  console.log(props);
+  const { values, setType, setCic, setGrouping, setSmoker } = props;
 
   return (
     <div>
@@ -22,7 +23,7 @@ const Quote = props => {
                   type="button"
                   className="orange-btn"
                   onClick={() => {
-                    setType(insuranceType.level)
+                    setType(insuranceType.level);
                   }}
                   active={values.type === insuranceType.level ? true : false}
                 >
@@ -177,7 +178,7 @@ const Quote = props => {
         </Col>
       </Row>
     </div>
-  )
-}
+  );
+};
 
-export default Quote
+export default Quote;
