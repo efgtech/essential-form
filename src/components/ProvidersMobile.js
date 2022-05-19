@@ -1,10 +1,10 @@
-import React from "react"
-import { Row, Col } from "react-bootstrap"
-import providers from "../data/providers"
+import React from "react";
+import { Row, Col } from "react-bootstrap";
+import providers from "../data/providers";
 
 //display insurance providers logo on mobile
 
-const ProvidersMobile = props => {
+const ProvidersMobile = (props) => {
   return (
     <div className="mobile-logo-container d-block d-md-none">
       <Row>
@@ -12,7 +12,7 @@ const ProvidersMobile = props => {
           <div className="mobile-card">
             <div className="mobile-card-body">
               <Row>
-                {providers.slice(0, 3).map(provider => (
+                {providers.slice(0, 3).map((provider) => (
                   <Col key={provider.id}>
                     <img
                       src={provider.src}
@@ -27,7 +27,7 @@ const ProvidersMobile = props => {
               <Row>
                 {providers
                   .slice(Math.max(providers.length - 3, 0))
-                  .map(provider => (
+                  .map((provider) => (
                     <Col key={provider.id}>
                       <img
                         src={provider.src}
@@ -42,7 +42,7 @@ const ProvidersMobile = props => {
             </div>
             <div className="compare-title-container">
               <div>
-                <h5 className="compare-title">{props.title}</h5>
+                <h5 className="compare-title">{props.header}</h5>
               </div>
             </div>
           </div>
@@ -52,7 +52,7 @@ const ProvidersMobile = props => {
         </Col>
       </Row>
     </div>
-  )
-}
+  );
+};
 
-export default ProvidersMobile
+export default ProvidersMobile;

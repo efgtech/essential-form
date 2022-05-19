@@ -1,9 +1,9 @@
-import React from "react"
-import { Container, Row, Col, Form, Alert } from "react-bootstrap"
-import Button from "react-bootstrap/Button"
-import ProvidersMobile from "./ProvidersMobile"
-import ProvidersDesktop from "./ProvidersDesktop"
-import useForm from "./useForm"
+import React from "react";
+import { Container, Row, Col, Form, Alert } from "react-bootstrap";
+import Button from "react-bootstrap/Button";
+import ProvidersMobile from "./ProvidersMobile";
+import ProvidersDesktop from "./ProvidersDesktop";
+import useForm from "./useForm";
 import {
   coverAmtOptions,
   lengthOfCoverOptions,
@@ -11,11 +11,11 @@ import {
   dobMonthOptions,
   dobYearOptions,
   titleOptions,
-} from "../data/formOptions"
-import Bp from "./Bp"
-import Quote from "./Quote"
-import { BP_TYPE, PP_TYPE } from "../types/types"
-const QuoteForm = props => {
+} from "../data/formOptions";
+import Bp from "./Bp";
+import Quote from "./Quote";
+import { BP_TYPE, PP_TYPE } from "../types/types";
+const QuoteForm = (props) => {
   const {
     values,
     handleChange,
@@ -29,12 +29,12 @@ const QuoteForm = props => {
     setSmoker,
     setValues,
     disabled,
-  } = useForm(props.formType)
+  } = useForm(props.formType);
 
   return (
     <div>
       <Container>
-        <ProvidersMobile />
+        <ProvidersMobile header={props.header} />
         <Row className="justify-content-center">
           {errorMessage ? (
             <Col sm={11} md={12} lg={9}>
@@ -337,7 +337,7 @@ const QuoteForm = props => {
       </div>
       <hr />
     </div>
-  )
-}
+  );
+};
 
-export default QuoteForm
+export default QuoteForm;
