@@ -12,7 +12,7 @@ import { navigate } from "gatsby";
 import { isBrowser } from "../data/utils.js";
 import { BP_TYPE, PP_TYPE } from "../types/types";
 
-const UKL_LAST_SUBMISSION_COOKIE_NAME = "ukl_last_submission";
+const ESSENTIAL_LAST_SUBMISSION_COOKIE_NAME = "essential_last_submission";
 
 const useForm = (formType) => {
   const cookies = new Cookies();
@@ -99,7 +99,7 @@ const useForm = (formType) => {
   };
 
   const hasExistingSubmission = () => {
-    return cookies.get(UKL_LAST_SUBMISSION_COOKIE_NAME) ? true : false;
+    return cookies.get(ESSENTIAL_LAST_SUBMISSION_COOKIE_NAME) ? true : false;
   };
 
   const getUrlParam = (param) => {
@@ -245,7 +245,7 @@ const useForm = (formType) => {
           })
           .then(() => {
             //we only allow one submission every 24hrs
-            cookies.set(UKL_LAST_SUBMISSION_COOKIE_NAME, true, {
+            cookies.set(ESSENTIAL_LAST_SUBMISSION_COOKIE_NAME, true, {
               path: "/",
               maxAge: 86400,
             });

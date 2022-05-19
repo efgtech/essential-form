@@ -18,7 +18,7 @@ const Header = () => {
             ></img>
           </Col>
           <Col className="desktop-only-header col-sm-4 d-none d-md-block">
-            <p className="uk-info">
+            <p className="opening-times">
               Get a quote over the phone: <strong>0161 694 8990</strong>
               <br />
               Mon - Thurs: <strong>9:00am - 7:00pm</strong>

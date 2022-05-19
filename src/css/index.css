@@ -1,13 +1,6 @@
 /* ------------GLOBAL------------ */
 @import "~animate.css/animate.css";
 
-.ukl-brand {
-  font-size: 21px;
-  font-weight: 200;
-  padding: 17px 15px 0px 0px;
-  color: #006600;
-}
-
 @font-face {
   font-family: "Futura_MD_BT_Medium";
   src: url("../fonts/futura_md_bt_medium.woff");
@@ -82,106 +75,6 @@ html {
   font-size: 14px;
 }
 
-/* ------------UKL-FOCUS POPUP------------ */
-
-/* FOR BOTH DESKTOP AND MOBILE */
-animate__animated {
-  --animate-duration: 2s;
-}
-
-/* :root {
-  --animate-duration: 1s;
-  --animate-delay: 1s;
-  --animate-repeat: 1;
-} */
-
-/* .circle-parent {
-  display: flex;
-  align-items: center;
-} */
-
-.ukl-focus-background {
-  /* display: block; */
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 100vh;
-  z-index: 999;
-  overflow: auto;
-  background-color: rgb(0, 0, 0);
-  opacity: 0.83;
-}
-
-.ukl-focus-desktop-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  /* top: 0;
-  left: 0;
-  right: 0; */
-  width: 100%;
-  z-index: 9999999999;
-  height: 100vh;
-}
-
-/* DESKTOP */
-
-.ukl-focus-close-button {
-  position: absolute;
-  right: 10%;
-  top: 2%;
-  cursor: pointer;
-}
-
-.ukl-focus-quotes-button {
-  position: absolute;
-  top: 78%;
-  left: 50%;
-  transform: translate(-48%, -50%);
-  cursor: pointer;
-}
-
-/* ------------UKL-FOCUS POPUP------------ */
-
-/* MOBILE */
-
-.ukl-focus-mobile-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  width: 100%;
-  z-index: 9999999999;
-  height: 100vh;
-}
-
-.ukl-focus-countdown {
-  position: absolute;
-  font-size: 110px;
-  font-weight: 900;
-  font-family: sans-serif;
-  color: white;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.ukl-focus-mobile-close-btn {
-  position: absolute;
-  right: 1.5%;
-  bottom: 91.5%;
-  cursor: pointer;
-}
-
-.ukl-focus-mobile-continue-btn {
-  position: absolute;
-  top: 76%;
-  left: 7%;
-  cursor: pointer;
-}
-
 /* ------------BACKGROUND------------ */
 
 @media only screen and (max-width: 1920px) {
@@ -209,7 +102,7 @@ animate__animated {
   padding: 0.5rem 1rem;
 }
 
-.uk-info {
+.opening-times {
   text-align: right;
   font-size: 13px;
   margin-top: 1em;
