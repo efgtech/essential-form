@@ -13,20 +13,12 @@ const Footer = () => {
               By clicking "compare quotes now" you confirm you have read and
               agree with our{" "}
               <a
-                href="https://uklifeinsurance.co.uk/privacy.php"
+                href="https://www.essentialinsurance.co.uk/privacy-policy/"
                 rel="noreferrer nofollow"
                 target="_blank"
               >
-                privacy policy
+                privacy policy{" "}
               </a>
-              ,{" "}
-              <a
-                href="https://uklifeinsurance.co.uk/tandc.php"
-                rel="noreferrer nofollow"
-                target="_blank"
-              >
-                terms & conditions
-              </a>{" "}
               and to be contacted by an FCA authorised broker.
             </p>
           </Col>
@@ -49,7 +41,7 @@ const Footer = () => {
               <ul>
                 <li>
                   <a
-                    href="https://uklifeinsurance.co.uk/privacy.php"
+                    href="https://www.essentialinsurance.co.uk/privacy-policy/"
                     rel="noreferrer nofollow"
                     target="_blank"
                     className="terms"
@@ -59,16 +51,18 @@ const Footer = () => {
                 </li>
                 <li>
                   <a
-                    href="https://uklifeinsurance.co.uk/contact.php"
+                    href="https://www.essentialinsurance.co.uk/contact-us/"
                     rel="noreferrer nofollow"
                     target="_blank"
                     className="terms"
                   >
                     Contact Us
+                    <br />
                   </a>
                 </li>
                 <li className="trading-info">
                   <p>
+                    <br />
                     <strong>
                       {" "}
                       © {new Date().getFullYear()} Uklifeinsurance.co.uk is a
