@@ -3,7 +3,6 @@ import { Row, Col, Form, Button } from "react-bootstrap";
 import { insuranceType, partyGrouping } from "../data/formOptions";
 
 const Quote = (props) => {
-  console.log(props);
   const { values, setType, setCic, setGrouping, setSmoker } = props;
 
   return (
