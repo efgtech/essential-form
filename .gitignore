@@ -55,6 +55,8 @@ typings/
 .env*
 .env.development
 
+.public/
+
 .cache
 .cache/redux
 
