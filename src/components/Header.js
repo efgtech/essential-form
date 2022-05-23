@@ -19,7 +19,7 @@ const Header = () => {
           </Col>
           <Col className="desktop-only-header col-sm-4 d-none d-md-block">
             <p className="opening-times">
-              Get a quote over the phone: <strong>0161 694 8990</strong>
+              Get a quote over the phone: <strong>0800 612 8005</strong>
               <br />
               Mon - Thurs: <strong>9:00am - 7:00pm</strong>
               <br />
@@ -28,7 +28,7 @@ const Header = () => {
           </Col>
 
           <Col className="d-sm-none telephone-icon">
-            <a href={"tel: 0161 694 8990"}>
+            <a href={"tel: 0800 612 8005"}>
               <i
                 className="fas fa-phone-square fa-3x"
                 style={{

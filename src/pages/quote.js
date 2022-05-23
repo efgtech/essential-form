@@ -577,8 +577,8 @@ const paramObj = {
     ),
   },
   [DEFAULT_PG_VALUE]: {
-    title: "Compare Cheap Life Insurance",
-    header: <>Compare Cheap Life Insurance</>,
+    title: "Compare Life Insurance Quotes",
+    header: <>Compare Life Insurance Quotes</>,
   },
 };
 

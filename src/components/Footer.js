@@ -17,9 +17,8 @@ const Footer = () => {
                 rel="noreferrer nofollow"
                 target="_blank"
               >
-                privacy policy{" "}
+                privacy policy.
               </a>
-              and to be contacted by an FCA authorised broker.
             </p>
           </Col>
         </Row>

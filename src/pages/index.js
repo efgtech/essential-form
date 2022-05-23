@@ -82,8 +82,8 @@ const App = (props) => {
 // default values if props are not passed in
 App.defaultProps = {
   handlePageTitle: {
-    title: "Compare Cheap Life Insurance",
-    header: <>Compare Cheap Life Insurance</>,
+    title: "Compare Life Insurance Quotes",
+    header: <>Compare Life Insurance Quotes</>,
   },
 };
 export default App;
