@@ -16,25 +16,12 @@ const Results = (props) => {
     }
   };
 
-  // useEffect(() => {
-  //   if (isBrowser) {
-  //     if (window) {
-  //       if (window.hasOwnProperty("richSnippetReviewsWidgets")) {
-  //         window.richSnippetReviewsWidgets("carousel-widget", {
-  //           store: "uklifeinsurance-co-uk",
-  //           primaryClr: "#f47e27",
-  //           neutralClr: "#cccccc",
-  //           reviewTextClr: "#333333",
-  //           widgetName: "carousel",
-  //           layout: "fullWidth",
-  //           numReviews: 40,
-  //           contentMode: "company",
-  //           hideDates: false,
-  //         });
-  //       }
-  //     }
-  //   }
-  // });
+  useEffect(() => {
+    const scriptTag = document.createElement("script");
+    scriptTag.src = "https://api.feefo.com/api/javascript/essential-insurance";
+    scriptTag.async = true;
+    document.body.appendChild(scriptTag);
+  });
 
   return (
     <>
@@ -102,7 +89,6 @@ const Results = (props) => {
               </Card>
             </Col>
           </Row>
-          {/* <div id="carousel-widget"></div> */}
           <div
             id="feefo-service-review-carousel-widgetId"
             class="feefo-review-carousel-widget-service"

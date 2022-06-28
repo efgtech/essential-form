@@ -29,24 +29,12 @@ const App = (props) => {
     }
   });
 
-  useEffect(() => {
-    const scriptTag = document.createElement("script");
-    scriptTag.src = "https://api.feefo.com/api/javascript/essential-insurance";
-    scriptTag.async = true;
-    document.body.appendChild(scriptTag);
-  }, []);
-
   //testing
 
   // Helmet used to dynamically manage the head section
   return (
     <main>
       <Helmet>
-        {/* <script
-          async={true}
-          src="https://api.feefo.com/api/javascript/essential-insurance"
-          type="text/javascript"
-        ></script> */}
         <script
           async
           src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GATSBY_GOOGLE_ANALYTICS_ID}`}
