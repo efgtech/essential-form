@@ -29,17 +29,24 @@ const App = (props) => {
     }
   });
 
+  useEffect(() => {
+    const scriptTag = document.createElement("script");
+    scriptTag.src = "https://api.feefo.com/api/javascript/essential-insurance";
+    scriptTag.async = true;
+    document.body.appendChild(scriptTag);
+  }, []);
+
   //testing
 
   // Helmet used to dynamically manage the head section
   return (
     <main>
       <Helmet>
-        <script
+        {/* <script
           async={true}
           src="https://api.feefo.com/api/javascript/essential-insurance"
           type="text/javascript"
-        ></script>
+        ></script> */}
         <script
           async
           src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GATSBY_GOOGLE_ANALYTICS_ID}`}
@@ -74,11 +81,6 @@ const App = (props) => {
       <Header />
       <QuoteForm formType={formType} header={props.handlePageTitle.header} />
       <Footer />
-      <script
-        async={true}
-        src="https://api.feefo.com/api/javascript/essential-insurance"
-        type="text/javascript"
-      ></script>
     </main>
   );
 };
