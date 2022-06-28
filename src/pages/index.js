@@ -71,11 +71,16 @@ const App = (props) => {
         )}
         <title>{props.handlePageTitle.title}</title>
       </Helmet>
-      <>
+      <body>
         <Header />
         <QuoteForm formType={formType} header={props.handlePageTitle.header} />
         <Footer />
-      </>
+        <script
+          async={true}
+          src="https://api.feefo.com/api/javascript/essential-insurance"
+          type="text/javascript"
+        ></script>
+      </body>
     </main>
   );
 };
