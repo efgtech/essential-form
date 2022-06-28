@@ -16,25 +16,25 @@ const Results = (props) => {
     }
   };
 
-  useEffect(() => {
-    if (isBrowser) {
-      if (window) {
-        if (window.hasOwnProperty("richSnippetReviewsWidgets")) {
-          window.richSnippetReviewsWidgets("carousel-widget", {
-            store: "uklifeinsurance-co-uk",
-            primaryClr: "#f47e27",
-            neutralClr: "#cccccc",
-            reviewTextClr: "#333333",
-            widgetName: "carousel",
-            layout: "fullWidth",
-            numReviews: 40,
-            contentMode: "company",
-            hideDates: false,
-          });
-        }
-      }
-    }
-  });
+  // useEffect(() => {
+  //   if (isBrowser) {
+  //     if (window) {
+  //       if (window.hasOwnProperty("richSnippetReviewsWidgets")) {
+  //         window.richSnippetReviewsWidgets("carousel-widget", {
+  //           store: "uklifeinsurance-co-uk",
+  //           primaryClr: "#f47e27",
+  //           neutralClr: "#cccccc",
+  //           reviewTextClr: "#333333",
+  //           widgetName: "carousel",
+  //           layout: "fullWidth",
+  //           numReviews: 40,
+  //           contentMode: "company",
+  //           hideDates: false,
+  //         });
+  //       }
+  //     }
+  //   }
+  // });
 
   return (
     <>
@@ -57,7 +57,7 @@ const Results = (props) => {
                       style={{ justifyContent: "center" }}
                     >
                       <p>
-                        are your allocated broker and will be in touch soon to:
+                        Thank you for your enquiry, we will be in touch soon to:
                       </p>
                     </Row>
                     <Row style={{ justifyContent: "center" }}>
@@ -102,7 +102,11 @@ const Results = (props) => {
               </Card>
             </Col>
           </Row>
-          <div id="carousel-widget"></div>
+          {/* <div id="carousel-widget"></div> */}
+          <div
+            id="feefo-service-review-carousel-widgetId"
+            class="feefo-review-carousel-widget-service"
+          ></div>
         </Container>
       </div>
     </>

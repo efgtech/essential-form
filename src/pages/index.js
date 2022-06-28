@@ -36,15 +36,14 @@ const App = (props) => {
     <main>
       <Helmet>
         <script
+          async={true}
+          src="https://api.feefo.com/api/javascript/essential-insurance"
+          type="text/javascript"
+        ></script>
+        <script
           async
           src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GATSBY_GOOGLE_ANALYTICS_ID}`}
         />
-
-        <script
-          async={true}
-          src="https://widget.reviews.co.uk/rich-snippet-reviews-widgets/dist.js"
-          type="text/javascript"
-        ></script>
         {isBrowser() && (
           <script>
             {(function (h, o, t, j, a, r) {
